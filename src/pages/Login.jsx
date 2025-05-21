@@ -51,7 +51,7 @@ export default function Login() {
 
                             </div>
                             <a href="#" className="text-sm text-indigo-600 hover:text-indigo-500 ml-2 self-center">
-                                Forgot password?
+                                Lupa Password?
                             </a>
                         </div>
 
