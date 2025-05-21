@@ -1,24 +1,27 @@
-import PoliImage from "../assets/Layanan-poli.png"; // Ganti dengan nama file gambar header kamu
+import { useEffect, useState } from "react";
+import axios from "axios";
+import PoliImage from "../assets/Layanan-poli.png";
 
 export default function Poli() {
-  const daftarPoli = [
-    "Poli Umum",
-    "Poli Gigi",
-    "Poli Anak",
-    "Poli Kandungan (Obgyn)",
-    "Poli Penyakit Dalam",
-    "Poli THT",
-    "Poli Mata",
-    "Poli Saraf",
-    "Poli Kulit dan Kelamin",
-    "Poli Ortopedi",
-    "Poli Gizi",
-    "Poli Psikologi",
-  ];
+  const [poliList, setPoliList] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    axios
+      .get("/data/poli.json") // path dari public/data/poli.json
+      .then((res) => {
+        setPoliList(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Gagal fetch data poli:", err);
+        setLoading(false);
+      });
+  }, []);
 
   return (
     <div className="bg-white text-gray-800">
-      {/* Hero Gambar */}
+      {/* Gambar Header */}
       <section className="w-full">
         <img
           src={PoliImage}
@@ -27,30 +30,37 @@ export default function Poli() {
         />
       </section>
 
-      {/* Judul & Deskripsi */}
-      <section className="px-6 py-12 text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-blue-600 mb-4">
-          Layanan Poli
-        </h2>
-        <p className="text-sm md:text-base text-gray-600 max-w-2xl mx-auto">
-          Kami menyediakan berbagai layanan poli untuk memenuhi kebutuhan
-          pemeriksaan dan konsultasi kesehatan Anda. Ditangani oleh tenaga medis
-          profesional, setiap poli dirancang untuk memberikan pelayanan yang
-          nyaman, cepat, dan terpercaya.
-        </p>
-      </section>
+      {/* Floating Card Section */}
+      <section className="px-4 sm:px-6 -mt-24 sm:-mt-40 md:-mt-56 mb-16 relative z-10">
+        <div className="max-w-6xl mx-auto bg-white rounded-3xl shadow-xl px-4 sm:px-6 md:px-12 py-6 sm:py-10 md:py-14">
+          {/* Judul & Deskripsi */}
+          <div className="text-center mb-8">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600 mb-3">
+              Layanan Poli
+            </h2>
+            <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
+              Kami menyediakan berbagai layanan poli untuk memenuhi kebutuhan
+              pemeriksaan dan konsultasi kesehatan Anda. Ditangani oleh tenaga
+              medis profesional, setiap poli dirancang untuk memberikan
+              pelayanan yang nyaman, cepat, dan terpercaya.
+            </p>
+          </div>
 
-      {/* Daftar Poli */}
-      <section className="px-6 pb-16">
-        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-          {daftarPoli.map((poli, index) => (
-            <div
-              key={index}
-              className="text-center text-blue-600 font-medium py-4 px-4 rounded-xl shadow-sm hover:shadow-md transition cursor-pointer bg-[radial-gradient(circle_at_top_left,_#e6f0ff,_#d0e6ff,_#f8fbff)]"
-            >
-              {poli}
+          {/* Daftar Poli */}
+          {loading ? (
+            <p className="text-center text-gray-500">Memuat data...</p>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-4 px-2">
+              {poliList.map((poli) => (
+                <div
+                  key={poli.id}
+                  className="max-w-[320px] w-full mx-auto text-center text-blue-600 font-medium text-sm sm:text-base py-2.5 px-4 rounded-xl shadow-sm hover:shadow-md hover:bg-blue-100/40 transition duration-200 cursor-pointer bg-[radial-gradient(circle_at_top_left,_#e6f0ff,_#d0e6ff,_#f8fbff)]"
+                >
+                  {poli.nama}
+                </div>
+              ))}
             </div>
-          ))}
+          )}
         </div>
       </section>
     </div>
