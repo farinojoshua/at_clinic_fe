@@ -14,7 +14,7 @@ export default function AppRouter() {
       <Navbar />
       <Routes>
         <Route
-          path="/"
+          path='/'
           element={
             <Layout>
               <Home />
@@ -22,7 +22,7 @@ export default function AppRouter() {
           }
         />
         <Route
-          path="/about"
+          path='/about'
           element={
             <Layout>
               <About />
@@ -30,7 +30,7 @@ export default function AppRouter() {
           }
         />
         <Route
-          path="/poli"
+          path='/poli'
           element={
             <Layout>
               <Poli />
@@ -38,7 +38,7 @@ export default function AppRouter() {
           }
         />
         <Route
-          path="/dokter"
+          path='/dokter'
           element={
             <Layout>
               <DokterList />
@@ -46,7 +46,7 @@ export default function AppRouter() {
           }
         />
         <Route
-          path="/login"
+          path='/login'
           element={
             <Layout>
               <Login />
@@ -54,7 +54,7 @@ export default function AppRouter() {
           }
         />
         <Route
-          path="/register"
+          path='/register'
           element={
             <Layout>
               <Register />
