@@ -1,0 +1,14 @@
+[
+  { "id": 1, "nama": "Poli Umum" },
+  { "id": 2, "nama": "Poli Gigi" },
+  { "id": 3, "nama": "Poli Anak" },
+  { "id": 4, "nama": "Poli Kandungan (Obgyn)" },
+  { "id": 5, "nama": "Poli Penyakit Dalam" },
+  { "id": 6, "nama": "Poli THT" },
+  { "id": 7, "nama": "Poli Mata" },
+  { "id": 8, "nama": "Poli Saraf" },
+  { "id": 9, "nama": "Poli Kulit dan Kelamin" },
+  { "id": 10, "nama": "Poli Ortopedi" },
+  { "id": 11, "nama": "Poli Gizi" },
+  { "id": 12, "nama": "Poli Psikologi" }
+]
