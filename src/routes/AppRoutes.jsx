@@ -3,6 +3,8 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import Navbar from "../components/Navbar";
 import Poli from "../pages/Poli";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
 
 export default function AppRouter() {
   return (
@@ -12,6 +14,8 @@ export default function AppRouter() {
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/poli' element={<Poli />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
       </Routes>
     </BrowserRouter>
   );
