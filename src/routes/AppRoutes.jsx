@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import Poli from "../pages/Poli";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Jadwaltemu from "../pages/Jadwaltemu";
 
 export default function AppRouter() {
   return (
@@ -16,6 +17,8 @@ export default function AppRouter() {
         <Route path='/poli' element={<Poli />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/jadwaltemu' element={<Jadwaltemu />} />
+        
       </Routes>
     </BrowserRouter>
   );
