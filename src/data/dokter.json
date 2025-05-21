@@ -1,0 +1,138 @@
+[
+  {
+    "nama": "dr. Adhyaksa Diffa M.",
+    "spesialis": "Umum",
+    "foto": "",
+    "jadwal": [
+      { "hari": "Senin", "jam": "08.00 - 12.00" },
+      { "hari": "Rabu", "jam": "13.00 - 15.00" },
+      { "hari": "Jumat", "jam": "09.00 - 11.00" }
+    ]
+  },
+  {
+    "nama": "dr. Difa Lagi",
+    "spesialis": "Kandungan",
+    "foto": "",
+    "jadwal": [
+      { "hari": "Selasa", "jam": "10.00 - 13.00" },
+      { "hari": "Kamis", "jam": "14.00 - 16.00" }
+    ]
+  },
+  {
+    "nama": "dr. Farino Joshua",
+    "spesialis": "Anak",
+    "foto": "",
+    "jadwal": [
+      { "hari": "Senin", "jam": "09.00 - 12.00" },
+      { "hari": "Kamis", "jam": "08.00 - 10.00" }
+    ]
+  },
+  {
+    "nama": "dr. Zhirazzi D.",
+    "spesialis": "Gigi",
+    "foto": "",
+    "jadwal": [
+      { "hari": "Selasa", "jam": "11.00 - 14.00" },
+      { "hari": "Jumat", "jam": "08.00 - 10.00" }
+    ]
+  },
+  {
+    "nama": "dr. Larasati Ivanka",
+    "spesialis": "Mata",
+    "foto": "",
+    "jadwal": [
+      { "hari": "Rabu", "jam": "10.00 - 13.00" },
+      { "hari": "Sabtu", "jam": "09.00 - 12.00" }
+    ]
+  },
+  {
+    "nama": "dr. Marcelino A.",
+    "spesialis": "Kulit dan Kelamin",
+    "foto": "",
+    "jadwal": [
+      { "hari": "Senin", "jam": "14.00 - 16.00" },
+      { "hari": "Kamis", "jam": "10.00 - 12.00" }
+    ]
+  },
+  {
+    "nama": "dr. Rani Oktaviani",
+    "spesialis": "THT",
+    "foto": "",
+    "jadwal": [
+      { "hari": "Selasa", "jam": "13.00 - 15.00" },
+      { "hari": "Jumat", "jam": "10.00 - 13.00" }
+    ]
+  },
+  {
+    "nama": "dr. Yoga Permana",
+    "spesialis": "Jantung",
+    "foto": "",
+    "jadwal": [
+      { "hari": "Senin", "jam": "08.00 - 11.00" },
+      { "hari": "Rabu", "jam": "09.00 - 12.00" }
+    ]
+  },
+  {
+    "nama": "dr. Aulia W.",
+    "spesialis": "Saraf",
+    "foto": "",
+    "jadwal": [
+      { "hari": "Selasa", "jam": "14.00 - 16.00" },
+      { "hari": "Sabtu", "jam": "10.00 - 13.00" }
+    ]
+  },
+  {
+    "nama": "dr. Rifqi Fadhlurrahman",
+    "spesialis": "Paru",
+    "foto": "",
+    "jadwal": [
+      { "hari": "Rabu", "jam": "11.00 - 13.00" },
+      { "hari": "Kamis", "jam": "09.00 - 11.00" }
+    ]
+  },
+  {
+    "nama": "dr. Nabila K.",
+    "spesialis": "Penyakit Dalam",
+    "foto": "",
+    "jadwal": [
+      { "hari": "Senin", "jam": "13.00 - 15.00" },
+      { "hari": "Jumat", "jam": "08.00 - 10.00" }
+    ]
+  },
+  {
+    "nama": "dr. Dimas Bagaskara",
+    "spesialis": "Orthopedi",
+    "foto": "",
+    "jadwal": [
+      { "hari": "Selasa", "jam": "08.00 - 11.00" },
+      { "hari": "Kamis", "jam": "13.00 - 15.00" }
+    ]
+  },
+  {
+    "nama": "dr. Nadira F.",
+    "spesialis": "Umum",
+    "foto": "",
+    "jadwal": [
+      { "hari": "Selasa", "jam": "10.00 - 12.00" },
+      { "hari": "Kamis", "jam": "08.00 - 10.00" }
+    ]
+  },
+  {
+    "nama": "dr. Rio Satrio",
+    "spesialis": "Kandungan",
+    "foto": "",
+    "jadwal": [
+      { "hari": "Senin", "jam": "14.00 - 17.00" },
+      { "hari": "Rabu", "jam": "10.00 - 12.00" }
+    ]
+  },
+  {
+    "nama": "dr. Intan Prameswari",
+    "spesialis": "Mata",
+    "foto": "",
+    "jadwal": [
+      { "hari": "Kamis", "jam": "10.00 - 13.00" },
+      { "hari": "Sabtu", "jam": "09.00 - 11.00" }
+    ]
+  }
+]
