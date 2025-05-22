@@ -6,7 +6,7 @@ import Poli from "../pages/Poli";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import DokterList from "../pages/DokterList";
-import Layout from "../components/Layout"; // ✅ tambahkan
+import Layout from "../components/Layout";
 import Profile from "../pages/Profile";
 import History from "../pages/History";
 import Jadwaltemu from "../pages/Jadwaltemu";
@@ -15,7 +15,6 @@ import Popup from "../pages/Popup";
 export default function AppRouter() {
   return (
     <BrowserRouter>
-      <Navbar />
       <Routes>
         <Route
           path='/'
@@ -49,24 +48,12 @@ export default function AppRouter() {
             </Layout>
           }
         />
+        {/* ⛔ Tanpa Layout => Tanpa Navbar */}
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+
         <Route
-          path='/login'
-          element={
-            <Layout>
-              <Login />
-            </Layout>
-          }
-        />
-        <Route
-          path='/register'
-          element={
-            <Layout>
-              <Register />
-            </Layout>
-          }
-        />
-        <Route
-          path='/Profile'
+          path='/profile'
           element={
             <Layout>
               <Profile />
@@ -74,7 +61,7 @@ export default function AppRouter() {
           }
         />
         <Route
-          path='/History'
+          path='/history'
           element={
             <Layout>
               <History />
@@ -89,7 +76,6 @@ export default function AppRouter() {
             </Layout>
           }
         />
-
         <Route
           path='/popup'
           element={

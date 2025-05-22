@@ -17,6 +17,8 @@ export default function Calendar({
   const [slots, setSlots] = useState([]);
   const [selectedSlot, setSelectedSlot] = useState(null);
 
+  const now = dayjs();
+
   useEffect(() => {
     const dateStr = selectDate.format("YYYY-MM-DD");
     if (availableDates.includes(dateStr)) {
@@ -59,23 +61,17 @@ export default function Calendar({
           <div className='flex gap-10 items-center'>
             <GrFormPrevious
               className='w-5 h-5 cursor-pointer hover:scale-105 transition-all'
-              onClick={() => {
-                setToday(today.month(today.month() - 1));
-              }}
+              onClick={() => setToday(today.month(today.month() - 1))}
             />
             <h1
               className='cursor-pointer hover:scale-105 transition-all'
-              onClick={() => {
-                setToday(currentDate);
-              }}
+              onClick={() => setToday(currentDate)}
             >
               Today
             </h1>
             <GrFormNext
               className='w-5 h-5 cursor-pointer hover:scale-105 transition-all'
-              onClick={() => {
-                setToday(today.month(today.month() + 1));
-              }}
+              onClick={() => setToday(today.month(today.month() + 1))}
             />
           </div>
         </div>
@@ -113,7 +109,7 @@ export default function Calendar({
                   )}
                   onClick={() => {
                     setSelectDate(date);
-                    setSelectedSlot(null); // reset slot ketika tanggal berubah
+                    setSelectedSlot(null);
                   }}
                 >
                   {date.date()}
@@ -142,22 +138,32 @@ export default function Calendar({
           <p className='text-gray-400'>Tidak ada jadwal tersedia</p>
         ) : (
           <div className='flex flex-wrap gap-2 mt-2'>
-            {slots.map((slot, i) => (
-              <button
-                key={i}
-                onClick={() => slot.available && setSelectedSlot(slot.time)}
-                disabled={!slot.available}
-                className={`px-3 py-1 rounded-lg text-sm border ${
-                  slot.available
-                    ? selectedSlot === slot.time
+            {slots.map((slot, i) => {
+              const isToday = selectDate.isSame(now, "day");
+              const slotTime = dayjs(
+                `${selectDate.format("YYYY-MM-DD")}T${slot.time}`
+              );
+              const isPast = isToday && slotTime.isBefore(now);
+              const isDisabled = !slot.available || isPast;
+
+              return (
+                <button
+                  key={i}
+                  onClick={() => !isDisabled && setSelectedSlot(slot.time)}
+                  disabled={isDisabled}
+                  title={isPast ? "Waktu sudah lewat" : ""}
+                  className={`px-3 py-1 rounded-lg text-sm border ${
+                    isDisabled
+                      ? "bg-gray-200 text-gray-500 cursor-not-allowed"
+                      : selectedSlot === slot.time
                       ? "bg-blue-500 text-white"
                       : "bg-green-100 text-green-800 hover:bg-green-200"
-                    : "bg-gray-200 text-gray-500 cursor-not-allowed"
-                }`}
-              >
-                {slot.time}
-              </button>
-            ))}
+                  }`}
+                >
+                  {slot.time}
+                </button>
+              );
+            })}
           </div>
         )}
       </div>
