@@ -48,9 +48,9 @@ export default function AppRouter() {
             </Layout>
           }
         />
-        {/* ⛔ Tanpa Layout => Tanpa Navbar */}
-        <Route path='/masuk' element={<Login />} />
-        <Route path='/daftar' element={<Register />} />
+
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
 
         <Route
           path='/profile'
