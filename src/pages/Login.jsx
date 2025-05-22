@@ -94,7 +94,7 @@ export default function Login() {
           <p className='mt-10 text-center text-sm text-gray-500'>
             Belum Mendaftar?{" "}
             <a
-              href='/Register'
+              href='/register'
               className='font-semibold text-blue-600 hover:text-blue-500'
             >
               Daftar
