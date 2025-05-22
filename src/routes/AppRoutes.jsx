@@ -7,6 +7,8 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import DokterList from "../pages/DokterList";
 import Layout from "../components/Layout"; // ✅ tambahkan
+import Profile from "../pages/Profile";
+import History from "../pages/History";
 
 export default function AppRouter() {
   return (
@@ -58,6 +60,22 @@ export default function AppRouter() {
           element={
             <Layout>
               <Register />
+            </Layout>
+          }
+        />
+        <Route
+          path='/Profile'
+          element={
+            <Layout>
+              <Profile />
+            </Layout>
+          }
+        />
+         <Route
+          path='/History'
+          element={
+            <Layout>
+              <History />
             </Layout>
           }
         />
