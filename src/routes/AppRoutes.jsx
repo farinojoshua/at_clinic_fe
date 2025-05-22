@@ -9,6 +9,8 @@ import DokterList from "../pages/DokterList";
 import Layout from "../components/Layout"; // ✅ tambahkan
 import Profile from "../pages/Profile";
 import History from "../pages/History";
+import Jadwaltemu from "../pages/Jadwaltemu";
+import Popup from "../pages/Popup";
 
 export default function AppRouter() {
   return (
@@ -40,7 +42,7 @@ export default function AppRouter() {
           }
         />
         <Route
-          path='/dokter'
+          path='/dokter/:specialist_id'
           element={
             <Layout>
               <DokterList />
@@ -71,11 +73,28 @@ export default function AppRouter() {
             </Layout>
           }
         />
-         <Route
+        <Route
           path='/History'
           element={
             <Layout>
               <History />
+            </Layout>
+          }
+        />
+        <Route
+          path='/jadwaltemu/:doctor_id'
+          element={
+            <Layout>
+              <Jadwaltemu />
+            </Layout>
+          }
+        />
+
+        <Route
+          path='/popup'
+          element={
+            <Layout>
+              <Popup />
             </Layout>
           }
         />
