@@ -1,5 +1,6 @@
 import drdiffa from '../assets/326.png'; // Pastikan file foto sesuai path
 import Calender from './Calender'; // Komponen kalender kamu
+import Popup from './Popup'; // Komponen popup kamu
 
 export default function JadwalTemu() {
     return (

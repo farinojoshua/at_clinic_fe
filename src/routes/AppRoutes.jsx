@@ -6,6 +6,7 @@ import Poli from "../pages/Poli";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Jadwaltemu from "../pages/Jadwaltemu";
+import Popup from "../pages/Popup";
 
 export default function AppRouter() {
   return (
@@ -18,6 +19,8 @@ export default function AppRouter() {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/jadwaltemu' element={<Jadwaltemu />} />
+        <Route path='/popup' element={<Popup />} />
+        
         
       </Routes>
     </BrowserRouter>
