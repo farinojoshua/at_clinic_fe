@@ -158,7 +158,7 @@ export default function JadwalTemu() {
         )}
       </div>
 
-      <div className='flex flex-col w-full lg:w-2/12 items-center'>
+      <div className='flex flex-col w-full lg:w-2/12 items-center mb-10'>
         <div className='flex justify-center lg:justify-between space-x-4 mt-6 lg:mt-0'>
           <button
             onClick={() => navigate(-1)}

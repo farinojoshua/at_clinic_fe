@@ -151,7 +151,7 @@ export default function Register() {
 
           <button
             type='submit'
-            className='w-full py-2 bg-blue-600 text-white rounded hover:bg-blue-700'
+            className='w-full py-2 bg-blue-600 text-white rounded hover:bg-blue-700 cursor-pointer'
           >
             Daftar
           </button>
