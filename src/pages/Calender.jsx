@@ -51,7 +51,7 @@ export default function Calendar({
   }, [selectedSlot]);
 
   return (
-    <div className='flex gap-10 sm:divide-x justify-center sm:w-full mx-auto items-center sm:flex-row flex-col'>
+    <div className='flex gap-10 justify-center sm:w-full mx-auto items-center sm:flex-row flex-col'>
       {/* KALENDER */}
       <div className='w-96'>
         <div className='flex justify-between items-center'>

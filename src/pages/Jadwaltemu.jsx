@@ -51,16 +51,14 @@ export default function JadwalTemu() {
 
   const handleSubmit = () => {
     const token = localStorage.getItem("token");
-    if (!token || !selectedDate || !selectedTime) return;
-
-    const formattedDate = new Date(selectedDate).toISOString().split("T")[0];
+    if (!token) return;
 
     axios
       .post(
         "https://982f-103-132-239-226.ngrok-free.app/api/appointment",
         {
           doctor_id,
-          date: formattedDate,
+          date: selectedDate,
           time: selectedTime,
         },
         {
@@ -120,14 +118,43 @@ export default function JadwalTemu() {
           onSlotSelect={handleSlotSelect}
         />
         {successMessage && (
-          <p className='text-green-600 mt-4 text-sm font-medium'>
-            {successMessage}
-          </p>
+          <div className='mt-4 flex items-center gap-2 bg-green-100 border border-green-300 text-green-800 px-4 py-2 rounded-md text-sm shadow-sm'>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              className='h-5 w-5 text-green-600'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='currentColor'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth='2'
+                d='M5 13l4 4L19 7'
+              />
+            </svg>
+            <span>{successMessage}</span>
+          </div>
         )}
+
         {errorMessage && (
-          <p className='text-red-600 mt-4 text-sm font-medium'>
-            {errorMessage}
-          </p>
+          <div className='mt-4 flex items-center gap-2 bg-red-100 border border-red-300 text-red-800 px-4 py-2 rounded-md text-sm shadow-sm'>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              className='h-5 w-5 text-red-600'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='currentColor'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth='2'
+                d='M6 18L18 6M6 6l12 12'
+              />
+            </svg>
+            <span>{errorMessage}</span>
+          </div>
         )}
       </div>
 
@@ -144,7 +171,7 @@ export default function JadwalTemu() {
             disabled={!selectedDate || !selectedTime}
             className={`px-6 py-2 rounded-full shadow-sm ${
               selectedDate && selectedTime
-                ? "bg-blue-500 text-white hover:bg-blue-600"
+                ? "bg-blue-500 text-white hover:bg-blue-600 cursor-pointer"
                 : "bg-gray-200 text-gray-400 cursor-not-allowed"
             }`}
           >

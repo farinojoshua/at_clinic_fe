@@ -132,7 +132,7 @@ export default function DokterList() {
                     <div className='mt-6 text-center md:text-right'>
                       <button
                         onClick={() => navigate(`/jadwaltemu/${dokter.id}`)}
-                        className='bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 text-sm rounded-full transition'
+                        className='bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 text-sm rounded-full transition cursor-pointer'
                       >
                         Buat Janji
                       </button>
