@@ -1,9 +1,15 @@
-import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/24/outline'
 
-export default function Popup() {
-    const [open, setOpen] = useState(true)
+export default function Popup(props) {
+    const navigate = useNavigate();
+    const { open, setOpen } = props;
+
+    const handleOK = () => {
+        setOpen(false);
+        navigate('/');
+    };
     return (
 
         <Dialog open={open} onClose={setOpen} className="relative z-10">
@@ -42,7 +48,7 @@ export default function Popup() {
                         <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6 justify-center">
                             <button
                                 type="button"
-                                onClick={() => setOpen(false)}
+                                onClick={handleOK}
                                 className="inline-flex w-1/4 justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-xl  hover:bg-blue-500"
                             >
                                 Oke

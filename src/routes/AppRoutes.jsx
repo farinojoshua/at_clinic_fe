@@ -19,7 +19,6 @@ export default function AppRouter() {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/jadwaltemu' element={<Jadwaltemu />} />
-        <Route path='/popup' element={<Popup />} />
         
         
       </Routes>
